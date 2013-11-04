@@ -1,5 +1,6 @@
 package com.example.classlab7c.adapters;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.example.classlab7c.R;
@@ -13,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class EventAdapter extends ArrayAdapter<Event> {
+	private SimpleDateFormat df = new SimpleDateFormat("yyyy/mm/dd");
 	private Context mContext;
 	private List<Event> mEntries;
 	
@@ -33,9 +35,9 @@ public class EventAdapter extends ArrayAdapter<Event> {
 		textViewTitle.setText(event.getEventName());
 		
 		TextView textViewDescription = (TextView)view.findViewById(R.id.textViewEventDate);
-		textViewDescription.setText("Date: " + event.getDate());
+		textViewDescription.setText("Date: " + df.format(event.getDate()));
 		
-		TextView textViewPublished= (TextView)view.findViewById(R.id.textViewEventList);
+		TextView textViewPublished= (TextView)view.findViewById(R.id.textViewEventLocation);
 		textViewPublished.setText("Location: " + event.getLocation());
 		
 		return view;

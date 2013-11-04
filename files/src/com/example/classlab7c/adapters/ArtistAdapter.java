@@ -12,14 +12,15 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class ArtistAdapter extends ArrayAdapter<Artist> {
-	 
+
 	private Context mContext;
 	private List<Artist> mEntries;
 	
 	public ArtistAdapter(Context context,int textViewResourceId, List<Artist> entries) { 
 		super(context, textViewResourceId, entries);
 	    mContext=context;
-	    mEntries=entries; 
+	    mEntries=entries;
+	    
 	}
 	@Override
 	public View getView(int position, View view, ViewGroup parent) {
@@ -33,7 +34,8 @@ public class ArtistAdapter extends ArrayAdapter<Artist> {
 		textViewTitle.setText(artist.getArtistName());
 		
 		TextView textViewDescription = (TextView)view.findViewById(R.id.textViewSongList);
-		textViewDescription.setText("Songs: " + artist.getSongs());
+		textViewDescription.setText("Songs: " +   
+				artist.getSongs());
 		
 		TextView textViewPublished= (TextView)view.findViewById(R.id.textViewEventList);
 		textViewPublished.setText("Events: " + artist.getTours());
