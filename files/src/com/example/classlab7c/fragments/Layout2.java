@@ -4,9 +4,7 @@ import java.util.List;
 
 import com.example.classlab7c.R;
 import com.example.classlab7c.adapters.ArtistAdapter;
-import com.example.classlab7c.adapters.SongAdapter;
 import com.example.classlab7c.model.Artist;
-import com.example.classlab7c.model.Song;
 import com.example.classlab7c.service.MusicListService;
 
 import android.app.Fragment;
@@ -28,7 +26,7 @@ public class Layout2 extends Fragment {
 		
 		ArtistAdapter adapter =
 				new ArtistAdapter(getActivity(), R.layout.listview_for_each_artist, artist);
-		ListView listViewMusic = (ListView) view.findViewById(R.id.listViewArtists);
+		ListView listViewMusic = (ListView) view.findViewById(R.id.listViewArtist);
 		listViewMusic.setAdapter(adapter);
 		
 		return view;
